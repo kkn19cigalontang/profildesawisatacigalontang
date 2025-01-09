@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Website Desa Tebing Tinggi Kuantan Singingi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logoweb.png" />
+  <title>Profil Desa Cigalontang</title>
+
+  <!-- Favicon -->
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+  <!-- Slick Slider  CSS -->
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<style>
+.landscape-img {
+  width: 100%; /* Lebar penuh kolom */
+  height: auto; /* Pertahankan proporsi */
+  aspect-ratio: 16/9; /* Bentuk landscape */
+  object-fit: cover; /* Potong gambar agar sesuai */
+  object-position: center; /* Fokus pada bagian tengah gambar */
+  transition: transform 0.3s ease; /* Tambahkan efek transisi untuk perubahan skala */
+}
+
+/* Mengatur gambar landscape agar memenuhi container dengan proporsi yang tepat */
+.about-img img {
+    width: 100%;
+    height: auto; /* Memastikan gambar tidak terdistorsi */
+    object-fit: cover; /* Memastikan gambar terpotong proporsional jika perlu */
+    max-height: 300px; /* Membatasi tinggi maksimal agar layout tetap rapi */
+    border-radius: 10px; /* Membuat sudut gambar melengkung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan efek hover */
+}
+
+/* Efek zoom saat hover */
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Menjaga jarak antar baris */
+.row {
+    margin-bottom: 30px;
+}
+
+
+/* buku tamu */
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  min-width: 300px; /* Lebar minimum yang lebih besar */
+  max-width: 400px; /* Batas lebar maksimum agar tidak terlalu besar */
+  padding: 10px 0;
+  overflow-wrap: break-word; /* Memastikan teks panjang tidak melampaui batas */
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Dropdown Item Styling */
+.dropdown-item {
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  white-space: normal; /* Mengizinkan teks untuk membungkus ke baris berikutnya */
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+
+/* paketwisata */
+/* Tooltip Container */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Default Tooltip Content (hidden) */
+.tooltip-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 200px;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Tooltip Right Positioning */
+.tooltip-content.tooltip-right {
+  top: 50%;
+  left: 110%; /* Positioned to the right of the button */
+  transform: translateY(-50%);
+  margin-left: 10px;
+}
+
+/* Show Tooltip on Hover */
+.tooltip-container:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* section about */
+.section {
+    padding: 60px 0;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.hover-zoom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* bannerfoto */
+.adjustable-img {
+    display: block; /* Membuat elemen sebagai blok agar margin berfungsi */
+    margin: 0 auto; /* Pusatkan gambar secara horizontal */
+    width: 60%; /* Atur lebar gambar default */
+    height: auto; /* Pertahankan rasio aspek */
+    max-height: 1000px; /* Sesuaikan tinggi maksimum sesuai kebutuhan */
+    object-fit: cover; /* Pastikan gambar tetap terlihat proporsional */
+    border-radius: 10px; /* Opsional: Tambahkan sudut melengkung */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: Tambahkan bayangan */
+	margin-bottom: -80px;
+	margin-top: -105px;
+}
+
+@media (max-width: 768px) { /* Untuk perangkat dengan lebar layar <= 768px (tablet/ponsel) */
+    .adjustable-img {
+        width: 80%; /* Perbesar lebar gambar pada perangkat kecil */
+        max-height: 700px; /* Sesuaikan tinggi maksimum jika diperlukan */
+    }
+}
+
+@media (max-width: 480px) { /* Untuk perangkat dengan lebar layar <= 480px (ponsel kecil) */
+    .adjustable-img {
+        width: 90%; /* Lebar gambar hampir penuh pada ponsel kecil */
+        max-height: 600px; /* Sesuaikan tinggi maksimum jika diperlukan */
+    }
+}
+
+
+</style>
+
+<body id="top">
+
+<header>
+	<div class="header-top-bar">
+		<div class="container">
+			<span class="font-weight-bold mx-auto d-block text-center">PROFIL DESA WISATA CIGALONTANG</span>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg navigation" id="navbar">
+		<div class="container">
+		 	 <a class="navbar-brand" href="index.html">
+			  	<img src="images/dslogo.png" alt="" class="img-fluid">
+			  </a>
+
+		  	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="icofont-navigation-menu"></span>
+		  </button>
+	  
+		  <div class="collapse navbar-collapse" id="navbarmain">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html">Home</a>
+				  </li>
+				  <li class="nav-item active">
+					<a class="nav-link" href="sejarah-desa.html">Sejarah Desa</a>
+				  </li>
+			  
+				  <!-- Desa Wisata sebagai menu terpisah -->
+                  <li class="nav-item active">
+                    <a class="nav-link" href="paketan.html">Paket Desa Wisata</a>
+                  </li>
+                  
+				  <li class="nav-item active">
+					<a class="nav-link" href="desa-wisata.html">Potensi Desa Wisata</a>
+				  </li>
+				</ul>
+			  </div>
+
+
+			</ul>
+		  </div>
+		</div>
+	</nav>
+</header>
+	
+
+
+
+<!-- Slider Start -->
+<section class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block">
+					<div class="divider mb-3"></div>
+					<span class="text-uppercase text-sm letter-spacing ">Selamat Datang Di</span>
+					<h1 class="mb-3 mt-3">PAKET DESA WISATA CIGALONTANG</h1>
+					
+					<p class="mb-4 pr-5">Kecamatan Cigalontang, Kabupaten Tasikmalaya, Provinsi Jawa Barat</p>
+					<div class="btn-container ">
+						<div class="btn-container d-flex flex-column align-items-start">
+							<!-- paket desa wisata -->
+							<a href="paketan.html" class="btn btn-main-2 btn-icon btn-round-full">
+								Paket Desa Wisata <i class="icofont-simple-right ml-2"></i>
+							</a>
+							
+							  
+							<!-- buku tamu -->
+							<div class="dropdown mt-2">
+								<a href="#" 
+								   class="btn btn-main-2 btn-icon btn-round-full dropdown-toggle" 
+								   id="dropdownMenuButton" 
+								   data-toggle="dropdown" 
+								   aria-haspopup="true" 
+								   aria-expanded="false">
+								  Buku Tamu <i class="icofont-simple-right ml-2 mr"></i>
+								</a>
+								<div class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+								  <a class="dropdown-item" href="https://s.id/NgulakPangangonan">Ngulak pangangonan</a>
+								  <a class="dropdown-item" href="https://s.id/NgalanglangKarancageanDomba">Ngalanglang Karancagéan Domba</a>
+								  <a class="dropdown-item" href="https://s.id/NgadendangRasa">Ngadéndang Rasa</a>
+								  <a class="dropdown-item" href="https://s.id/SerenManis">Sérén Manis</a>
+								</div>
+							  </div>
+							  
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<img src="images/bg/bannercgl.png" alt="pangangonan" class="adjustable-img"> <br><br>
+
+
+<!-- VIDEO SECTION START -->
+<!-- <section class="cta-section my-0">
+	<div class="container">
+	  <div class="position-relative">
+		<div class="row mt-0">
+		  <div class="col-12 text-center">
+			<h2 class="mb-4">Profil Desa</h2>
+			<div class="video-wrapper position-relative" style="padding-top: 56.25%; background-color: transparent;">
+			  <video autoplay muted controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+				<source src="videos/portrait.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			  </video>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+<section class="cta-section my-0">
+	<div class="container">
+	  <div class="position-relative">
+		<div class="row mt-0">
+		  <div class="col-12 text-center">
+			<h2 class="mb-4">Profil Desa</h2>
+			<div class="video-wrapper position-relative" style="padding-top: 56.25%; background-color: transparent;">
+			  <video autoplay muted controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+				<source src="videos/landscapes.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			  </video>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section> -->
+<!-- VIDEO SECTION END -->
+  
+
+
+
+
+
+<section class="section about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 text-center">
+                <div class="about-content">
+                    <h2 class="title-color">Paket Desa Wisata</h2>
+                    <p class="mt-4 mb-5 text-center">
+						Desa Wisata adalah sebuah destinasi pariwisata yang menawarkan pengalaman unik bagi pengunjung untuk menikmati kehidupan pedesaan, budaya lokal, dan keindahan alam yang masih alami. Di desa ini, pengunjung dapat berinteraksi langsung dengan masyarakat setempat dan menikmati berbagai kegiatan tradisional yang diwariskan turun-temurun.
+						Tujuan utama dari Desa Wisata ini adalah untuk memperkenalkan potensi desa wisata sebagai sektor unggulan yang dapat mendukung kemajuan daerah, sekaligus memberikan peluang bagi masyarakat lokal untuk meningkatkan perekonomian melalui sektor pariwisata yang berkelanjutan.
+					
+					
+					</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Foto Baris 1 -->
+        <div class="row align-items-center bg-light py-4 rounded shadow-sm">
+            <!-- Foto 1 -->
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <div class="about-img text-center">
+                    <img src="images/wisata/gform jaipongan.png" alt="jaipongan" class="img-fluid rounded shadow hover-zoom">
+                </div>
+            </div>
+            <!-- Foto 2 -->
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <div class="about-img text-center">
+                    <img src="images/wisata/gform domba.png" alt="domba pak ajum" class="img-fluid rounded shadow hover-zoom">
+                </div>
+            </div>
+			<div class="col-lg-6 col-sm-12 mb-4">
+                <div class="about-img text-center">
+                    <img src="images/wisata/gform situ.jpg" alt="situ pangangonan" class="img-fluid rounded shadow hover-zoom">
+                </div>
+            </div>
+            <!-- Foto 4 -->
+            <div class="col-lg-6 col-sm-12 mb-4">
+                <div class="about-img text-center">
+                    <img src="images/wisata/gform wajit.png" alt="wajit mak eroh" class="img-fluid rounded shadow hover-zoom">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- footer Start -->
+<footer class="footer section gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mr-auto col-sm-6">
+                        <div class="widget mb-5 mb-lg-0">
+                            <div class="logo mb-4">
+                                <img src="images/dslogo.png" alt="" class="img-fluid">
+                            </div>
+                            <p>Desa Cigalontang <br> Kecamatan Cigalontang <br> Kabupaten Tasikmalaya <br> Provinsi Jawa Barat</p>
+
+                            <ul class="list-inline footer-socials mt-4">
+                                <!-- <li class="list-inline-item"><a href="https://www.facebook.com/"><i class="icofont-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="https://twitter.com/"><i class="icofont-twitter"></i></a></li> -->
+                                <li class="list-inline-item"><a href="https://gmail.com/"><i class="icofont-email"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="widget mb-5 mb-lg-0">
+                            <h4 class="text-capitalize mb-3">Menu</h4>
+                            <div class="divider mb-4"></div>
+
+                            <ul class="list-unstyled footer-menu lh-35">
+                                <li><a href="sejarah-desa.html">Sejarah </a></li>
+                                <li><a href="paketan.html">Paket Desa Wisata</a></li>
+                                <li><a href="desa-wisata.html">Potensi Desa Wisata</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget widget-contact mb-5 mb-lg-0">
+                            <h4 class="text-capitalize mb-3">Kontak</h4>
+                            <div class="divider mb-4"></div>
+
+                            <div class="footer-contact-block mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-email mr-3"></i>
+                                    <span class="h6 mb-0">Hubungi Kami  Melalui</span>
+                                </div>
+                                <h4 class="mt-2"><a>kkncigalontang19@gmail.com</a></h4>
+                            </div>
+                            <!-- NO HP -->
+                            <!-- <div class="footer-contact-block">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-support mr-3"></i>
+                                    <span class="h6 mb-0">HP</span>
+                                </div>
+                                <h4 class="mt-2"><a href="tel:+23-345-67890">+62 82231314343</a></h4>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </footer>
+
+   
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    <script>
+		document.getElementById('dropdownMenuButton').addEventListener('click', function(e) {
+		  e.preventDefault();
+		  const dropdown = document.querySelector('.dropdown-menu');
+		  dropdown.classList.toggle('show');
+		});
+
+// 		document.querySelector('.btn').addEventListener('click', function (e) {
+//   e.preventDefault();
+//   const tooltip = document.querySelector('.tooltip-content');
+//   tooltip.style.visibility = tooltip.style.visibility === 'visible' ? 'hidden' : 'visible';
+// });
+
+
+
+
+	  </script>
+	  
+	
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <!-- Bootstrap 4.3.2 -->
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <!-- Slick Slider -->
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <!-- Counterup -->
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+   
+    
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+
+  </body>
+  </html>
+   
